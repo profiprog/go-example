@@ -16,10 +16,10 @@ brews:
       owner: profiprog
       name: homebrew-tap
     skip_upload: auto
-    homepage: https://github.com/profiprog/go-exmaple
-    url_template: "https://github.com/profiprog/go-exmaple/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+    homepage: https://github.com/profiprog/go-example
+    url_template: "https://github.com/profiprog/go-example/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     folder: Formula
-    caveats: "How to use this binary: https://github.com/profiprog/go-exmaple"
+    caveats: "How to use this binary: https://github.com/profiprog/go-example"
     description: "Example"
     install: |
       bin.install "go-example"
