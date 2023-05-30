@@ -1,0 +1,7 @@
+!/.editorconfig
+!/.*ignore
+
+# Go
+/hello-world
+/hello-world.exe
+/dist
