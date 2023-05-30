@@ -1,9 +1,30 @@
 project_name: go-example
 
+# gitlab_urls:
+#   api: https://gitlab.mycompany.com/api/v4/
+#   download: https://gitlab.company.com
+
 before:
   hooks:
     - rm -rf dist go-example
     - go mod tidy
+
+brews:
+  -
+    name: go-example
+    tap:
+      owner: sikalabs
+      name: homebrew-tap
+    skip_upload: auto
+    homepage: https://github.com/profiprog/go-exmaple
+    url_template: "https://github.com/profiprog/go-exmaple/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+    folder: Formula
+    caveats: "How to use this binary: https://github.com/profiprog/go-exmaple"
+    description: "Example"
+    install: |
+      bin.install "go-example"
+    test: |
+      system "#{bin}/go-example version"
 
 builds:
   - env:
