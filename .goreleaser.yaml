@@ -13,7 +13,7 @@ brews:
   -
     name: go-example
     tap:
-      owner: sikalabs
+      owner: profiprog
       name: homebrew-tap
     skip_upload: auto
     homepage: https://github.com/profiprog/go-exmaple
