@@ -2,6 +2,9 @@
 !/.*ignore
 
 # Go
-/hello-world
-/hello-world.exe
+/go-example
+/go-example.exe
 /dist
+
+/*.local.*
+
