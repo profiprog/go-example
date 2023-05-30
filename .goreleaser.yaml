@@ -1,0 +1,34 @@
+project_name: go-example
+
+before:
+  hooks:
+    - rm -rf dist go-example
+    - go mod tidy
+
+builds:
+  - env:
+      - CGO_ENABLED=0 # bez ceckovej podpory (vsetko je pure go, ziadne dependencie na systemove C kniznice)
+    goos:
+      - linux
+      - windows
+      - darwin
+    flags:
+      - -trimpath
+    ldflags:
+      - -s
+      - -w
+      - -X hello-world/version.Version=v{{.Version}}
+
+snapshot:
+  name_template: "{{ incminor .Version }}-dev"
+
+archives:
+  - format: tar.gz
+    name_template: "{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    format_overrides:
+      - goos: windows
+        format: zip
+
+checksum:
+  name_template: "{{ .ProjectName }}_checksums.txt"
+  algorithm: sha256
