@@ -24,7 +24,7 @@ brews:
     install: |
       bin.install "go-example"
     test: |
-      system "#{bin}/go-example version"
+      system "#{bin}/go-example"
 
 builds:
   - env:
